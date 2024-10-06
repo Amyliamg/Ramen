@@ -1,4 +1,4 @@
-# server.py
+# link the api to the logic 
 from fastapi import APIRouter, HTTPException
 from datetime import datetime
 import asyncio
@@ -16,16 +16,16 @@ import random
 
 
 router = APIRouter()
-machine_states = [False, False]  # Two machines, initially idleß
+machine_states = [False, False]  # Two machines
 
 @router.get("/")
 async def read_root():
-    return "Type docs"
+    return "Check health (/docs for the swagger page)"
 
 @router.post("/ramen/", response_model=Ramen)
 async def add_ramen(ramen: RamenCreate):
     return await add_ramen_to_db(ramen)
-
+ß
 @router.get("/ramen/{ramen_id}", response_model=Ramen)
 async def get_ramen(ramen_id: int):
     return await get_ramen_from_db(ramen_id)
@@ -47,6 +47,12 @@ async def add_order(order: OrderCreate):
     )
     return new_order
 
+@router.get("/pending/orders", response_model=List[Order])
+async def get_pending_orders():
+    return await get_pending_orders_from_db()
+
+
+# concurrent calls
 async def process_order(order, machine_id):
     global machine_states
     machine_states[machine_id] = True
@@ -74,6 +80,3 @@ async def run_pending_orders():
         "completed_orders": completed_order_ids,
     }
 
-@router.get("/pending/orders", response_model=List[Order])
-async def get_pending_orders():
-    return await get_pending_orders_from_db()

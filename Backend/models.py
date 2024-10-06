@@ -8,7 +8,8 @@ class Ramen(BaseModel):
     Meat: str
     Spicy: int
     Typeid: ClassVar[Dict[str, int]] = {'Miso': 1, 'Shoyu': 2, 'Tonkatso': 3}  
-    # it would be better if we could store this mapping in database, but since the time is limit we just store this info in code to save the cost of using database
+    # it would be better if we could store this mapping in database, 
+    # but since the time is limit we just store this info in code to save the cost of using database
 
 class RamenCreate(BaseModel):
     Soup: str

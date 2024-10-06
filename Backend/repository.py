@@ -1,15 +1,15 @@
-# repository.py
+# this class is mainly used to hide the query to avoid the query injection attack
 from db import get_db_connection
 from models import OrderCreate, Order, RamenCreate,Ramen
 from datetime import datetime
 from fastapi import HTTPException
 
+
 async def add_ramen_to_db(ramen: RamenCreate) -> Ramen:
     connection = get_db_connection()
     cursor = connection.cursor()
-
     try:
-        # Determine Typeid based on Soup
+       
         if ramen.Soup not in Ramen.Typeid:
             raise HTTPException(status_code=400, detail="Invalid Soup type provided.")
         
@@ -47,20 +47,18 @@ async def get_ramen_from_db(ramen_id: int) -> Ramen:
         ramen_data = cursor.fetchone()
         
         if ramen_data:
-            # Dynamically determine Typeid based on the Soup
             soup = ramen_data[1]
             if soup not in Ramen.Typeid:
                 raise HTTPException(status_code=400, detail="Invalid Soup type found in database.")
             
             type_id = Ramen.Typeid[soup]
             
-            # Create Ramen instance and include Typeid
             ramen = Ramen(
                 Ramen_id=ramen_data[0],
                 Soup=ramen_data[1],
                 Meat=ramen_data[2],
                 Spicy=ramen_data[3],
-                Typeid=type_id  # Include the Typeid here
+                Typeid=type_id   
             )
             return ramen
         else:
@@ -101,7 +99,7 @@ async def add_order_to_db(order: OrderCreate) -> int:
             VALUES (%s, %s, %s, %s)
         ''', (order.Ramen_id, 12, "pending", datetime.now()))
         connection.commit()
-        return cursor.lastrowid  # Return the last inserted order ID
+        return cursor.lastrowid  # 
     except Exception as e:
         raise HTTPException(status_code=500, detail="Database issue: " + str(e))
     finally:
