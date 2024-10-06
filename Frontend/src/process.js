@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './css/order.css';  
+import './css/process.css';  
 
 const Process = () => {
     const [loading, setLoading] = useState(true);
