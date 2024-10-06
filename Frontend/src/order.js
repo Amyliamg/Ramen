@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './css/cart.css'; 
+import './css/order.css'; 
 
 const soupEmojis = {
     Shoyu: '🍜',   
@@ -99,6 +99,7 @@ function Order() {
             </div>
         </div>
     );
+    
 }
 
 export default Order;

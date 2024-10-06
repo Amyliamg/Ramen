@@ -1,29 +1,14 @@
-/* with the help from GitHub Copilot */
-
 body {
     background-color: #ffe4bb;
- 
     margin: 0;  
     font-family: Arial, sans-serif;  
 }
 
 .cart-container {
     padding: 20px;
- 
     border-radius: 10px;
     max-width: 500px;
     margin: auto;
-}
-
- 
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 .ramen-item {
@@ -66,42 +51,32 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    background-color: #ffaf63;  
+    color: white;
 }
 
 .back-button {
-    background-color: #ffaf63;  
-    color: white;
     margin-right: 10px;
 }
 
-.proceed-button {
-    background-color: #ffaf63;  
-    color: white;
-}
-
-.back-button:hover {
-    background-color: #ff8c00;  
-    transform: scale(1.05);  
-}
-
+.back-button:hover,
 .proceed-button:hover {
     background-color: #ff8c00;  
     transform: scale(1.05);  
 }
+
 .order-title {
     color: #FFA500;  
     font-size: 2.5rem;  
     text-align: center;  
-    margin: 20;  
+    margin: 20px 0;  
     font-style: italic;  
-    flex-grow: 1;  
 }
 
 .price-title {
     color: #FFA500;  
     font-size: 1.8rem;  
     text-align: center;  
-    margin: 20;  
+    margin: 20px 0;  
     font-style: italic;  
-    flex-grow: 1;  
 }
