@@ -1,0 +1,120 @@
+/* with the help from GitHub Copilot */
+
+.ramen-selection-container {
+    padding: 20px;
+    background-color: #ffe4bb;  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    min-height: 100vh;  
+}
+
+.header-container {
+    font-family: 'Georgia', serif; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;  
+}
+
+.header-container h1 {
+    color: #FFA500;  
+    font-size: 2.5rem;  
+    text-align: center;  
+    margin: 0;  
+    font-style: italic;  
+    flex-grow: 1;  
+}
+
+.selection-buttons {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 15px;
+}
+
+.selection-button {
+    background-color: transparent;
+    color: grey;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.3s, text-decoration 0.2s;
+    margin: 0 10px;  
+}
+
+.selection-button:hover {
+    color: #fff;  
+}
+
+.selection-button.selected {
+    color: #fff; 
+    text-decoration: underline; 
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;  
+    margin: 20px 0;  
+}
+
+.option {
+    width: 120px; 
+    height: 160px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #FFA500;  
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;  
+}
+
+.option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.selected {
+    background-color: #FFA500;  
+    color: white;  
+}
+
+ 
+.emoji {
+    font-size: 48px;  
+}
+
+.value {
+    font-size: 24px;  
+}
+
+.button {
+    background-color: #fff;  
+    color: #FF8C00;  
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 15px; 
+}
+
+.button:hover {
+    background-color: #FF8C00;  
+    color: white;  
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.order-count {
+    margin-left: 5px;
+    font-weight: bold;
+}
