@@ -1,3 +1,5 @@
 .env
 .venv
 Backend/__pycache__
+Frontend/node_modules/
+Frontend/package-lock.json
