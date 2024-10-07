@@ -40,6 +40,8 @@
 
 (use the following comment to set up virtual env )
   python -m venv myenv
+  
   os:source myenv/bin/activate
+  
   window:myenv\Scripts\activate
  
