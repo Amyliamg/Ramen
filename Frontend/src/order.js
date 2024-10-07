@@ -5,7 +5,7 @@ import './css/order.css';
 const soupEmojis = {
     Shoyu: '🍜',   
     Miso: '🍲',    
-    Tonkotsu: '🍥'
+    Tonkatso: '🍥'
 };
 
 function Order() {
