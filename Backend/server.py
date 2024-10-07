@@ -25,7 +25,7 @@ async def read_root():
 @router.post("/ramen/", response_model=Ramen)
 async def add_ramen(ramen: RamenCreate):
     return await add_ramen_to_db(ramen)
-ß
+
 @router.get("/ramen/{ramen_id}", response_model=Ramen)
 async def get_ramen(ramen_id: int):
     return await get_ramen_from_db(ramen_id)
