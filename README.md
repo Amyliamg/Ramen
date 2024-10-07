@@ -33,10 +33,13 @@
 2. Install the required packages:
     pip install -r requirements.txt
 3. Create a new database for the project and store your host authentication in .env
-4. Run the database migration scripts (Backend/createdb.py) [it will automatically create a sql_ramen database with three tables]
-5. Run backend  
+- DB_HOST = ' '
+- DB_USER =' '       
+- DB_PASSWORD = ' '     
+5. Run the database migration scripts (Backend/createdb.py) [it will automatically create a sql_ramen database with three tables]
+6. Run backend  
    uvicorn main:app --reload
-6. It will run at http://localhost:8000
+7. It will run at http://localhost:8000
 
 (use the following comment to set up virtual env )
 - python -m venv myenv
