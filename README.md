@@ -38,5 +38,8 @@
    uvicorn main:app --reload
 6. It will run at http://localhost:8000
 
-
+(use the following comment to set up virtual env )
+python -m venv myenv
+os:source myenv/bin/activate
+window:myenv\Scripts\activate
  
